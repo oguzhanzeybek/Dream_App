@@ -2,6 +2,8 @@
 
 // ignore_for_file: prefer_const_constructors
 
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:notebook_app/screens/home_screen.dart';
@@ -152,6 +154,9 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ],
               ),
+            ),
+            SizedBox(
+              height: 100, //telefondan telefona değişir, böyle kalmaması gerek.
             ),
             Row(
               crossAxisAlignment: CrossAxisAlignment.end,
