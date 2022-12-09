@@ -8,6 +8,12 @@ class AppStyle {
   static Color mainColor = Color.fromARGB(255, 13, 28, 94);
   static Color accentColor = Colors.blueGrey;
 
+  static List<Color> themeColors = [
+    Color.fromARGB(255, 7, 21, 101),
+    Color.fromARGB(255, 65, 7, 101),
+    Color.fromARGB(255, 40, 7, 101),
+  ];
+
   static List<Color> cardColors = [
     Colors.white,
     Colors.red.shade100,
