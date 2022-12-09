@@ -15,8 +15,8 @@ class NoteEditorScreen extends StatefulWidget {
 
 class _NoteEditorScreenState extends State<NoteEditorScreen> {
   int colorID = Random().nextInt(AppStyle.cardColors.length);
-  TextEditingController _titleController = TextEditingController();
-  TextEditingController _mainController = TextEditingController();
+  final TextEditingController _titleController = TextEditingController();
+  final TextEditingController _mainController = TextEditingController();
   String date = DateTime.now().toString();
   @override
   Widget build(BuildContext context) {
@@ -88,7 +88,8 @@ class _NoteEditorScreenState extends State<NoteEditorScreen> {
               Navigator.pop(context);
             },
           ).catchError(
-            (error) => debugPrint("failed to add new note due to $error"),
+            (error) =>
+                null, //debugPrint("failed to add new note due to $error"),
           );
         },
         child: Icon(Pixel.save),

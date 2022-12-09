@@ -22,8 +22,8 @@ class _LoginPageState extends State<LoginPage> {
       backgroundColor: Colors.black,
       body: SingleChildScrollView(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.end,
+          crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -152,9 +152,6 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ],
               ),
-            ),
-            SizedBox(
-              height: 30,
             ),
             Row(
               crossAxisAlignment: CrossAxisAlignment.end,
