@@ -61,7 +61,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       children: snapshot.data!.docs
                           .map(
                             (note) => NoteCardWidget(
-                              onTap: () {
+                              onTap: () async {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
