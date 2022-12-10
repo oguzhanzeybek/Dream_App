@@ -27,10 +27,10 @@ class AppStyle {
 
   static TextStyle mainTitle = GoogleFonts.vt323(
     fontSize: 26.0,
-    fontWeight: FontWeight.bold,
+    fontWeight: FontWeight.w700,
   );
   static TextStyle mainContent = GoogleFonts.vt323(
-    fontSize: 22.0,
+    fontSize: 20.0,
     fontWeight: FontWeight.normal,
   );
   static TextStyle dataTitle = GoogleFonts.vt323(

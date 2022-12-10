@@ -17,7 +17,7 @@ class _NoteEditorScreenState extends State<NoteEditorScreen> {
   int colorID = Random().nextInt(AppStyle.cardColors.length);
   final TextEditingController _titleController = TextEditingController();
   final TextEditingController _mainController = TextEditingController();
-  String date = DateTime.now().toString();
+  String date = DateTime.now().toString().substring(0, 8);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -78,7 +78,7 @@ class _NoteEditorScreenState extends State<NoteEditorScreen> {
           FirebaseFirestore.instance.collection("Notes").add(
             {
               "note_title": _titleController.text,
-              "creation_date": date,
+              "creation_date": date.substring(0, 8),
               "note_content": _mainController.text,
               "color_id": colorID,
             },
