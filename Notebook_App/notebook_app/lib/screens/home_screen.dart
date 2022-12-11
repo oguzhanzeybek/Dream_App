@@ -40,7 +40,10 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             Text(
               "Your Recent Notes",
-              style: GoogleFonts.vt323(color: Colors.white, fontSize: 28.0),
+              style: GoogleFonts.vt323(
+                color: Colors.white,
+                fontSize: 24.0,
+              ),
             ),
             SizedBox(
               height: 20.0,
@@ -49,17 +52,48 @@ class _HomeScreenState extends State<HomeScreen> {
               child: StreamBuilder<QuerySnapshot>(
                 builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
                   if (snapshot.connectionState == ConnectionState.waiting) {
-                    return Skeleton();
+                    return GridView(
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                      ),
+                      children: [
+                        Skeleton(
+                          height: 100,
+                          width: 100,
+                        ),
+                        Skeleton(
+                          height: 100,
+                          width: 100,
+                        ),
+                        Skeleton(
+                          height: 100,
+                          width: 100,
+                        ),
+                        Skeleton(
+                          height: 100,
+                          width: 100,
+                        ),
+                        Skeleton(
+                          height: 100,
+                          width: 100,
+                        ),
+                        Skeleton(
+                          height: 100,
+                          width: 100,
+                        ),
+                        Skeleton(
+                          height: 100,
+                          width: 100,
+                        ),
+                        Skeleton(
+                          height: 100,
+                          width: 100,
+                        ),
+                      ].toList(),
+                    );
                   }
                   if (snapshot.hasData) {
-                    return Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: Skeleton(
-                        height: 100,
-                        width: 400,
-                      ),
-                    );
-                    /*return GridView(
+                    return GridView(
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 2,
                       ),
@@ -79,7 +113,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                           )
                           .toList(),
-                    );*/
+                    );
                   }
                   return Text(
                     "No notes until now",
@@ -130,19 +164,15 @@ class Skeleton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.all(10.0),
       height: height,
       width: width,
       padding: EdgeInsets.all(
-        8,
+        8.0,
       ),
       decoration: BoxDecoration(
         color: Colors.black.withOpacity(
-          0.3,
-        ),
-        borderRadius: BorderRadius.all(
-          Radius.circular(
-            16.0,
-          ),
+          0.2,
         ),
       ),
     );
