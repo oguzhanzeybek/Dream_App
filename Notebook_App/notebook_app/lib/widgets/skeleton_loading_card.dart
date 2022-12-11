@@ -3,7 +3,6 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:notebook_app/style/app_style.dart';
 import 'package:pixelarticons/pixel.dart';
 
@@ -22,15 +21,12 @@ class Skeleton extends StatelessWidget {
     return Container(
       margin: EdgeInsets.all(10.0),
       height: height,
-      color: AppStyle.cardColors[colorID],
       width: width,
       padding: EdgeInsets.all(
         8.0,
       ),
       decoration: BoxDecoration(
-        color: Colors.black.withOpacity(
-          0.2,
-        ),
+        color: AppStyle.cardColors[colorID].withOpacity(0.3),
       ),
     );
   }

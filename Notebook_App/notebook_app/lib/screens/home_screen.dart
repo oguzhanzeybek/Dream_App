@@ -7,6 +7,7 @@ import 'package:notebook_app/screens/note_editor.dart';
 import 'package:notebook_app/screens/note_reader.dart';
 import 'package:notebook_app/style/app_style.dart';
 import 'package:notebook_app/widgets/note_card.dart';
+import 'package:notebook_app/widgets/skeleton_loading_card.dart';
 import 'package:pixelarticons/pixelarticons.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -97,6 +98,45 @@ class _HomeScreenState extends State<HomeScreen> {
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 2,
                       ),
+                      children: [
+                        Skeleton(
+                          height: 100,
+                          width: 100,
+                        ),
+                        Skeleton(
+                          height: 100,
+                          width: 100,
+                        ),
+                        Skeleton(
+                          height: 100,
+                          width: 100,
+                        ),
+                        Skeleton(
+                          height: 100,
+                          width: 100,
+                        ),
+                        Skeleton(
+                          height: 100,
+                          width: 100,
+                        ),
+                        Skeleton(
+                          height: 100,
+                          width: 100,
+                        ),
+                        Skeleton(
+                          height: 100,
+                          width: 100,
+                        ),
+                        Skeleton(
+                          height: 100,
+                          width: 100,
+                        ),
+                      ].toList(),
+                    );
+                    /*return GridView(
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                      ),
                       children: snapshot.data!.docs
                           .map(
                             (note) => noteCard(
@@ -113,7 +153,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                           )
                           .toList(),
-                    );
+                    );*/
                   }
                   return Text(
                     "No notes until now",
@@ -152,7 +192,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
-class Skeleton extends StatelessWidget {
+/*class Skeleton extends StatelessWidget {
   const Skeleton({
     Key? key,
     this.height,
@@ -177,4 +217,4 @@ class Skeleton extends StatelessWidget {
       ),
     );
   }
-}
+}*/
