@@ -49,12 +49,17 @@ class _HomeScreenState extends State<HomeScreen> {
               child: StreamBuilder<QuerySnapshot>(
                 builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
                   if (snapshot.connectionState == ConnectionState.waiting) {
-                    return Center(
-                      child: CircularProgressIndicator(),
-                    );
+                    return Skeleton();
                   }
                   if (snapshot.hasData) {
-                    return GridView(
+                    return Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Skeleton(
+                        height: 100,
+                        width: 400,
+                      ),
+                    );
+                    /*return GridView(
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 2,
                       ),
@@ -74,7 +79,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                           )
                           .toList(),
-                    );
+                    );*/
                   }
                   return Text(
                     "No notes until now",
@@ -108,6 +113,37 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         icon: Icon(Pixel.addbox),
         //extendedPadding: EdgeInsets.all(10.0),
+      ),
+    );
+  }
+}
+
+class Skeleton extends StatelessWidget {
+  const Skeleton({
+    Key? key,
+    this.height,
+    this.width,
+  }) : super(key: key);
+
+  final double? height, width;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: height,
+      width: width,
+      padding: EdgeInsets.all(
+        8,
+      ),
+      decoration: BoxDecoration(
+        color: Colors.black.withOpacity(
+          0.3,
+        ),
+        borderRadius: BorderRadius.all(
+          Radius.circular(
+            16.0,
+          ),
+        ),
       ),
     );
   }
