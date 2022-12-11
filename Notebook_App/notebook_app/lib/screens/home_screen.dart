@@ -7,6 +7,7 @@ import 'package:notebook_app/screens/note_editor.dart';
 import 'package:notebook_app/screens/note_reader.dart';
 import 'package:notebook_app/style/app_style.dart';
 import 'package:notebook_app/widgets/note_card.dart';
+import 'package:notebook_app/widgets/skeleton_loading_card.dart';
 import 'package:pixelarticons/pixelarticons.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -40,7 +41,10 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             Text(
               "Your Recent Notes",
-              style: GoogleFonts.vt323(color: Colors.white, fontSize: 28.0),
+              style: GoogleFonts.vt323(
+                color: Colors.white,
+                fontSize: 24.0,
+              ),
             ),
             SizedBox(
               height: 20.0,
@@ -49,8 +53,44 @@ class _HomeScreenState extends State<HomeScreen> {
               child: StreamBuilder<QuerySnapshot>(
                 builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
                   if (snapshot.connectionState == ConnectionState.waiting) {
-                    return Center(
-                      child: CircularProgressIndicator(),
+                    return GridView(
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                      ),
+                      children: [
+                        Skeleton(
+                          height: 100,
+                          width: 100,
+                        ),
+                        Skeleton(
+                          height: 100,
+                          width: 100,
+                        ),
+                        Skeleton(
+                          height: 100,
+                          width: 100,
+                        ),
+                        Skeleton(
+                          height: 100,
+                          width: 100,
+                        ),
+                        Skeleton(
+                          height: 100,
+                          width: 100,
+                        ),
+                        Skeleton(
+                          height: 100,
+                          width: 100,
+                        ),
+                        Skeleton(
+                          height: 100,
+                          width: 100,
+                        ),
+                        Skeleton(
+                          height: 100,
+                          width: 100,
+                        ),
+                      ].toList(),
                     );
                   }
                   if (snapshot.hasData) {
