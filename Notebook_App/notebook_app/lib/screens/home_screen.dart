@@ -98,45 +98,6 @@ class _HomeScreenState extends State<HomeScreen> {
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 2,
                       ),
-                      children: [
-                        Skeleton(
-                          height: 100,
-                          width: 100,
-                        ),
-                        Skeleton(
-                          height: 100,
-                          width: 100,
-                        ),
-                        Skeleton(
-                          height: 100,
-                          width: 100,
-                        ),
-                        Skeleton(
-                          height: 100,
-                          width: 100,
-                        ),
-                        Skeleton(
-                          height: 100,
-                          width: 100,
-                        ),
-                        Skeleton(
-                          height: 100,
-                          width: 100,
-                        ),
-                        Skeleton(
-                          height: 100,
-                          width: 100,
-                        ),
-                        Skeleton(
-                          height: 100,
-                          width: 100,
-                        ),
-                      ].toList(),
-                    );
-                    /*return GridView(
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2,
-                      ),
                       children: snapshot.data!.docs
                           .map(
                             (note) => noteCard(
@@ -153,7 +114,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                           )
                           .toList(),
-                    );*/
+                    );
                   }
                   return Text(
                     "No notes until now",
@@ -191,30 +152,3 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
-
-/*class Skeleton extends StatelessWidget {
-  const Skeleton({
-    Key? key,
-    this.height,
-    this.width,
-  }) : super(key: key);
-
-  final double? height, width;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.all(10.0),
-      height: height,
-      width: width,
-      padding: EdgeInsets.all(
-        8.0,
-      ),
-      decoration: BoxDecoration(
-        color: Colors.black.withOpacity(
-          0.2,
-        ),
-      ),
-    );
-  }
-}*/
